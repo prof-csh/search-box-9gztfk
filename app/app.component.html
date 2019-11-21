@@ -1,0 +1,11 @@
+<hello name="{{ name }}"></hello>
+<p>
+	Start editing to see some magic happen :)
+
+</p>
+<form class="form-horizontal" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+	<div>
+		<input type="text" minlength="3" maxlength="20" ngui-auto-complete formControlName="continent" [source]="continents" [list-formatter]="autocompleListFormatter" value-property-name="id" display-property-name="name" placeholder="Contients" class="form-control" />
+	</div>
+</form>
+{{myForm.value | json }}
